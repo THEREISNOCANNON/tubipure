@@ -1,0 +1,10 @@
+.env*
+.git
+.agents
+.claude
+.codex
+/vendor
+/node_modules
+/database/*.sqlite
+/storage/logs/*.log
+/tests
