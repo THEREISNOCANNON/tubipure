@@ -10,6 +10,12 @@ use App\Http\Controllers\Api\PricingSettingsController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+Route::get('/health', function () {
+    DB::select('select 1');   // touches the database, which helps keep Supabase from pausing
+    return response('ok');
+});
 
 Route::get('/', function () {
     return view('tubipure');
