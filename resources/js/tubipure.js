@@ -4394,7 +4394,7 @@ async function refreshSession(){
   updateDeliveryHoursCard();
   currentUser = data.user;
   if(String(previousUserId||'')!==String(currentUser.id)) liveNotificationUserId=String(currentUser.id);
-  if(currentUser.customer){
+  if(currentUser.role==='customer' && currentUser.customer){
     currentUser.customer.addresses = currentUser.customer.addresses || [];
     const savedAddresses=await api('/my/addresses');
     currentUser.customer.addresses=savedAddresses.data;
